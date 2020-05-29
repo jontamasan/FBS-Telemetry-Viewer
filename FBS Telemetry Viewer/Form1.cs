@@ -17,6 +17,7 @@ namespace FBS_Telemetry_Viewer
         // URI to Ferunbus Telemetry
         const string BaseUri = "http://localhost:37337/";
         const string PlayerUri = BaseUri + "Player";
+        const string Vehicles = BaseUri + "Vehicles";
         const string VehiclesCurrentUri = BaseUri + "Vehicles/Current";
         const string MissionUri = BaseUri + "Mission";
         const string MapUri = BaseUri + "Map";
@@ -137,6 +138,7 @@ namespace FBS_Telemetry_Viewer
             try
             {
                 // Examine the open tab and connect only that tab.
+                // Player
                 if (this.tabControl1.SelectedIndex == (int)Tab.Player)
                 {
                     // Allocate an instance of DataGridView for error display.
@@ -150,6 +152,7 @@ namespace FBS_Telemetry_Viewer
                             playerResult.Headers, this.dataGridView1, this.label1);
                     }
                 }
+                // Vehicle
                 else if (this.tabControl1.SelectedIndex == (int)Tab.CurrentVehicle)
                 {
                     this.grid = this.dataGridView2;
@@ -160,6 +163,7 @@ namespace FBS_Telemetry_Viewer
                               currentVehicleResult.Headers, this.dataGridView2, this.label1);
                     }
                 }
+                // Mission
                 else if (this.tabControl1.SelectedIndex == (int)Tab.Mission)
                 {
                     this.grid = dataGridView3;
@@ -170,6 +174,7 @@ namespace FBS_Telemetry_Viewer
                             missionResult.Headers, this.dataGridView3, this.label1);
                     }
                 }
+                // Map
                 else if (this.tabControl1.SelectedIndex == (int)Tab.Map)
                 {
                     this.grid = dataGridView4;
@@ -180,6 +185,7 @@ namespace FBS_Telemetry_Viewer
                             mapResult.Headers, this.dataGridView4, this.label1);
                     }
                 }
+                // Route (Navi)
                 else if (this.tabControl1.SelectedIndex == (int)Tab.Route)
                 {
                     this.grid = dataGridView5;
@@ -190,6 +196,7 @@ namespace FBS_Telemetry_Viewer
                             routeResult.Headers, this.dataGridView5, this.label1);
                     }
                 }
+                // World
                 else if (this.tabControl1.SelectedIndex == (int)Tab.World)
                 {
                     this.grid = dataGridView6;
@@ -200,6 +207,7 @@ namespace FBS_Telemetry_Viewer
                             worldResult.Headers, this.dataGridView6, this.label1);
                     }
                 }
+                // Road Map
                 else if (this.tabControl1.SelectedIndex == (int)Tab.RoadMap)
                 {
                     /* roadmapResult is not implementation, since this JSON data is quite
